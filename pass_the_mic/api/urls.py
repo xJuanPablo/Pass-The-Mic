@@ -2,9 +2,7 @@
 
 from django.urls import path
 #This line imports the main function from the views.py in the api directory
-from .views import main
-
+from .views import AudioArenaView
 urlpatterns = [
-    path('', main),
-    path('home', main),
+    path('', AudioArenaView.as_view()),
 ]
