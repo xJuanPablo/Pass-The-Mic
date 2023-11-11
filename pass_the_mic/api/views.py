@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from rest_framework import generics
+from .serializers import AudioArenaSerializer
+from .models import AudioArena
 
-# Create your views here.
-def main(request):
-  return HttpResponse('Hello')
+class AudioArenaView(generics.CreateAPIView):
+  queryset = AudioArena.objects.all()
+  serializer_class = AudioArenaSerializer
